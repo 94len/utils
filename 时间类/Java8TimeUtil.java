@@ -253,6 +253,18 @@ public class Java8TimeUtil {
         return false;
 
     }
+	
+	/**
+     * 获取上个月第一天
+     * @param currentLD
+     * @return
+     */
+    public static LocalDate firstDayOfLastMonth(LocalDate currentLD){
+        if(currentLD == null){
+            currentLD = LocalDate.now();
+        }
+        return currentLD.plusMonths(-1).with(TemporalAdjusters.firstDayOfMonth());
+    }
 
 
 }
